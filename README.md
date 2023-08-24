@@ -2,6 +2,14 @@
 
 Welcome to your Laravel AJAX CRUD project! Follow these steps to get started:
 
+# Key Features of Project
+
+1) Only AJAX Used (No Page Redirects)
+2) User Data is Lazy Loaded On CLiking SHow More Button
+3) API Is Created And Used Everywhere For CRUD (As of Now API Is Open. No Authorization Need :) )
+4) Well Commented & Structured Coded 
+
+
 ## Installation
 
 1. Clone this repository to your local machine.
