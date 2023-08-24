@@ -7,7 +7,8 @@ Welcome to your Laravel AJAX CRUD project! Follow these steps to get started:
 1) Only AJAX Used (No Page Redirects)
 2) User Data is Lazy Loaded On CLiking SHow More Button
 3) API Is Created And Used Everywhere For CRUD (As of Now API Is Open. No Authorization Need :) )
-4) Well Commented & Structured Coded 
+4) Well Commented & Structured Coded
+5) Built In Validations For Form To Prevent Exceptions
 
 
 ## Installation
