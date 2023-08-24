@@ -174,10 +174,10 @@
     <script>
         $(document).ready(function() {
             var currentPage = 1;
-
             var searchTerm = ""; // Initialize the search term
 
 
+            // Fuinction For Appending Row(s) To Table
             function appendRecord(item) {
                 srNo++;
                 var recordHtml = `<tr class="text-center">
@@ -193,6 +193,7 @@
                 $(".customDataTable").append(recordHtml);
             }
 
+            // Getting Users Data From DB
             function getData() {
                 $('#show-more').attr('disabled', 'disabled');
                 $.ajax({
@@ -220,7 +221,7 @@
                 });
             }
 
-
+            // Initing Data of users
             getData();
             $('#show-more').on('click', function() {
                 getData();
@@ -309,6 +310,7 @@
             });
         });
 
+        // Adding Input Boxes to fill expereince
         $(document).on("click", ".addExp", function(e) {
             e.preventDefault();
 
@@ -318,6 +320,7 @@
 
         });
 
+        // Removing Input Boxes to delete expereince
         $(document).on("click", ".remExp", function(e) {
             e.preventDefault();
 
@@ -330,20 +333,28 @@
 
 
         });
+
+        // Fetching Data From DB to Edit User
         $(document).on("click", ".editUser", function(e) {
             e.preventDefault();
 
             var val = $(this).val();
             $.ajax({
+                // Calling Our Own API
                 url: '/api/userData/' + val,
                 type: "GET",
                 success: function(info) {
                     $.each(info.data, function(key, item) {
+                        // Showing User his/her original image
                         $("img").attr("src", "/user_images/" + item.userPicture);
+
+                        // Creating Education Boxes and Filling Data in It
                         $.each(item.education, function(key2, item2) {
                             $("select").find("option[value='" + item2.userEducation +
                                 "']").prop("selected", "selected");
                         });
+
+                        // Creating Experience Boxes and Filling Data in It
                         $(".toCopy").html("");
                         $.each(item.experience, function(key4, item4) {
 
@@ -385,6 +396,7 @@
         });
     </script>
     <script>
+        // Functional For Image Preview On Image Chooose
         var loadFile = function(event) {
             var output = document.getElementById('target');
             output.src = URL.createObjectURL(event.target.files[0]);

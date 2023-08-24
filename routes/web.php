@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+// Default Page Route
 Route::get('/', function () {
     return view('index');
 });
 
+// Getting Paginated Users Data
 Route::get('getUserData/{page}', [UserController::class, 'getUserData']);
+
+// Getting Data of User For Editing
 Route::get('getUserDataToEdit/{id}', [UserController::class, 'getUserDataToEdit']);
