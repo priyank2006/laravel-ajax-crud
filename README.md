@@ -1,4 +1,4 @@
-# Laravel AJAX CRUD (Under Developement)
+# Laravel AJAX CRUD
 
 Welcome to your Laravel AJAX CRUD project! Follow these steps to get started:
 
